@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PatientRecordApplication</name>
+    </assembly>
+    <members>
+        <member name="T:PatientRecordApplication.InvalidBalanceException">
+            <summary>
+            User-created exception for a negative balance.
+            </summary>
+        </member>
+        <member name="T:PatientRecordApplication.Patient">
+            <summary>
+            Patient class that contains information on ID, Name, and Balance.
+            </summary>
+        </member>
+        <member name="P:PatientRecordApplication.Patient.ID">
+            <summary>
+            ID number property with setter and getter.
+            </summary>
+        </member>
+        <member name="P:PatientRecordApplication.Patient.Name">
+            <summary>
+            Name string property with setter and getter.
+            </summary>
+        </member>
+        <member name="P:PatientRecordApplication.Patient.Balance">
+            <summary>
+            Balance decimal property with setter and getter.
+            </summary>
+        </member>
+        <member name="T:PatientRecordApplication.PatientRecords">
+            <summary>
+            Holds the patient file system to write to and read from.
+            </summary>
+        </member>
+        <member name="M:PatientRecordApplication.PatientRecords.#ctor(System.String)">
+            <summary>
+            Constructor that requires a file name to operate.
+            </summary>
+            <param name="inputFileName">name of the file to write to and read from.</param>
+        </member>
+        <member name="M:PatientRecordApplication.PatientRecords.closeRecords">
+            <summary>
+            Closes the main filestream.
+            </summary>
+        </member>
+        <member name="M:PatientRecordApplication.PatientRecords.closeWriter">
+            <summary>
+            Closes the writer.
+            </summary>
+        </member>
+        <member name="M:PatientRecordApplication.PatientRecords.addPatient(PatientRecordApplication.Patient)">
+            <summary>
+            Adds a patient to the file using the writer opened in the constructor.
+            </summary>
+            <param name="inputPatient">Patient with valid information to be entered</param>
+        </member>
+        <member name="M:PatientRecordApplication.PatientRecords.readAll">
+            <summary>
+            Reads the entire file back into the console.
+            </summary>
+        </member>
+        <member name="M:PatientRecordApplication.PatientRecords.readForPatientID(System.Int32)">
+            <summary>
+            Reads the entire file, but only returns the Patient that matches the ID entered, if it exists.
+            </summary>
+            <param name="matchID">ID to search for.</param>
+        </member>
+        <member name="M:PatientRecordApplication.PatientRecords.readForGreaterBalance(System.Decimal)">
+            <summary>
+            Reads the entire file and writes to the console the Patients that have a balance >= user input, if they exist.
+            </summary>
+            <param name="matchBalance">Lower bound balance to be greater than.</param>
+        </member>
+        <member name="T:PatientRecordApplication.Program">
+            <summary>
+            This program uses files to store and retrieve data. It also utilizes different exception handling.
+            </summary>
+            <Student>Grace Cappella</Student>
+            <Class>CIS297</Class>
+            <Semester>Winter 2022</Semester>
+        </member>
+        <member name="M:PatientRecordApplication.Program.Main(System.String[])">
+            <summary>
+            Writes to a file with user input, then reads all, and reads specific based on user input.
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:PatientRecordApplication.Program.checkValidID">
+            <summary>
+            Checks once if the ID entered is an integer
+            </summary>
+            <returns>an integer ID</returns>
+        </member>
+        <member name="M:PatientRecordApplication.Program.checkValidBalance">
+            <summary>
+            Checks once if the balance entered is a positive decimal.
+            </summary>
+            <returns>a positive decimal balance</returns>
+        </member>
+    </members>
+</doc>
